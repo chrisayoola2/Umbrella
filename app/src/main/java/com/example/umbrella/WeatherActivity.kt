@@ -57,8 +57,6 @@ class WeatherActivity : AppCompatActivity() {
                     val format2 = SimpleDateFormat("EEEE")
                     val finalDay = format2.format(dt1)
                     Log.d("TAGS", "$finalDay")
-
-
                 }
             }
 
@@ -68,8 +66,6 @@ class WeatherActivity : AppCompatActivity() {
         })
 
     }
-
-
     internal fun getTheCurrentWeather() {
         val retrofit = Retrofit.Builder().baseUrl(BaseUrl).addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(WeatherService::class.java)
@@ -89,8 +85,6 @@ class WeatherActivity : AppCompatActivity() {
                         tvCurrentTemp.setTextColor(resources.getColor(R.color.colorHeat))
                     } else tvCurrentTemp.setTextColor(resources.getColor(R.color.colorCool))
                     tvCurrentTemp.text = "%.0f".format(currentTemp).toString() + "°"
-
-
                 }
             }
 
@@ -105,10 +99,8 @@ class WeatherActivity : AppCompatActivity() {
         return ((temp!! - 273.15) * 9 / 5 + 32).toFloat()
     }
 
-
     companion object {
         var BaseUrl = "http://api.openweathermap.org/"
         var AppId = "a3f4403861102311554ff6b93a5ce529"
-        // var zip = //"77084"
     }
 }
