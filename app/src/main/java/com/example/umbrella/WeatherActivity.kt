@@ -45,21 +45,6 @@ class WeatherActivity : AppCompatActivity() {
                     val myForecast = response.body()
                     rv_weather_recyclerView.layoutManager = LinearLayoutManager(this@WeatherActivity)
                     rv_weather_recyclerView.adapter = RecyclerViewAdapter(myForecast!!.list,this@WeatherActivity)
-                   // RecyclerViewAdapter(myForecast!!.list,this@WeatherActivity)
-
-                    Log.d("TAGS", "${myForecast?.list!!.get(0).main.temp}\n")
-                    Log.d("TAGS", "${myForecast?.list!!.get(0).dt}")
-                    Log.d("TAGS", "${myForecast?.list!!.get(0).dtTxt}")
-                    Log.d("TAGS", "${myForecast?.list!!.get(1).main.temp}\n")
-                    Log.d("TAGS", "${myForecast?.list!!.get(1).dt}")
-                    Log.d("TAGS", "${myForecast?.list!!.get(1).dtTxt.format(Locale.US)}")
-
-                    val input_date = myForecast?.list!![10].dtTxt
-                    val format1 = SimpleDateFormat("yyyy-mm-dd HH:mm:ss")
-                    val dt1 = format1.parse(input_date)
-                    val format2 = SimpleDateFormat("EEEE")
-                    val finalDay = format2.format(dt1)
-                    Log.d("TAGS", "$finalDay")
                 }
             }
 
@@ -84,7 +69,6 @@ class WeatherActivity : AppCompatActivity() {
                     var currentTemp = myWeather!!.main!!.temp
                     currentTemp = convertToFahrenheit(currentTemp) // converts current temp from Kelvin to Degrees
                     if (currentTemp > 60) {
-                        // tvCurrentTemp.setTextColor(R.color.colorHeat)
                         tvCurrentTemp.setTextColor(resources.getColor(R.color.colorHeat))
                     } else tvCurrentTemp.setTextColor(resources.getColor(R.color.colorCool))
                     tvCurrentTemp.text = "%.0f".format(currentTemp).toString() + "°"
@@ -94,7 +78,6 @@ class WeatherActivity : AppCompatActivity() {
             override fun onFailure(call: Call<MyWeather>, t: Throwable) {
                 cityField?.text = t.message
             }
-
         })
     }
     fun onClick(view:View){

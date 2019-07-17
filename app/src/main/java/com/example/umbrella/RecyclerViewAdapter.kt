@@ -34,6 +34,7 @@ class RecyclerViewAdapter(val item: List<X>, val context: Context) :
 
         Log.d("TaGG", mTemp.toString())
         var mdescription = item[position].weather[0].description
+        mdescription = mdescription.toUpperCase()
 
         holder.itemView.tv_day.text = date
         holder.itemView.tv_temp.text = "%.0f".format(mTemp).toString() + "°"
@@ -44,9 +45,9 @@ class RecyclerViewAdapter(val item: List<X>, val context: Context) :
 
     private fun convertToDay(date: String): String {
         var inputDate = date
-        var format1 = SimpleDateFormat("yyyy-mm-dd HH:mm:ss")
+        var format1 = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
         var dt1 = format1.parse(inputDate)
-        var format2 = SimpleDateFormat("EEEE")
+        var format2 = SimpleDateFormat("E,MMMM dd \nhh:mma")
         var finalDay = format2.format(dt1)
         Log.d("TAGS", "$finalDay")
         return finalDay

@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                    android:orientation="vertical"
+                                   app:cardBackgroundColor="#5EB194"
                                    android:layout_width="match_parent"
                                    android:layout_height="wrap_content"
 android:layout_marginBottom="10dp">
@@ -12,6 +13,7 @@ android:layout_marginBottom="10dp">
                   app:layout_constraintLeft_toLeftOf="parent"
                   android:text="Monday"
                   android:id="@+id/tv_day"
+                  android:textColor="#F3F0F0"
                   android:textSize="35sp"
                   android:textStyle="bold"
                   android:fontFamily="sans-serif-thin"/>
@@ -19,9 +21,11 @@ android:layout_marginBottom="10dp">
         <TextView android:layout_width="wrap_content"
                   android:layout_height="match_parent"
                   app:layout_constraintLeft_toLeftOf="parent"
+                  android:textColor="#F3F0F0"
                   android:text="Cold and sunny"
                   android:id="@+id/tv_description"
                   android:textSize="20dp"
+                  android:fontFamily="sans-serif-condensed-light"
                   app:layout_constraintTop_toBottomOf="@id/tv_day"/>
         <TextView
                 android:layout_width="wrap_content"
@@ -30,11 +34,11 @@ android:layout_marginBottom="10dp">
                 android:textSize="30sp"
                 android:layout_marginRight="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="#F3F0F0"
                 android:text="75"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
         />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

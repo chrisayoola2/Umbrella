@@ -45,6 +45,7 @@
             android:layout_marginStart="8dp"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
+
             android:id="@+id/rv_weather_recyclerView"
             android:layout_height="400dp"
             app:layout_constraintTop_toBottomOf="@id/tvCurrentTemp"
@@ -63,5 +64,15 @@
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:id="@+id/change_city"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Future Forecast"
+              app:layout_constraintBottom_toTopOf="@id/rv_weather_recyclerView"
+              app:layout_constraintLeft_toLeftOf="parent"
+              android:textSize="20dp"
+              android:textStyle="bold"
+              android:layout_marginBottom="10dp"
+              app:layout_constraintRight_toRightOf="parent"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
