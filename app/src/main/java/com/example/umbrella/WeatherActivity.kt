@@ -3,6 +3,8 @@ package com.example.umbrella
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umbrella.model.datasource.local.daysforecast.fivedayResponse
@@ -21,6 +23,7 @@ import java.util.*
 class WeatherActivity : AppCompatActivity() {
     private var cityField: TextView? = null
     private lateinit var enteredZip: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,6 +96,13 @@ class WeatherActivity : AppCompatActivity() {
             }
 
         })
+    }
+    fun onClick(view:View){
+        when(view.id){
+            R.id.change_city -> {
+                this.finish()
+            }else -> {}
+        }
     }
 
     private fun convertToFahrenheit(temp: Float?): Float {
